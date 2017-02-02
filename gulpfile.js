@@ -74,6 +74,7 @@ gulp.task('assets', function() {
 });
 
 gulp.task('html', ['templates'], function() {
+  // need to update useref version and the pipe
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
   return gulp.src('.tmp/index.html')
@@ -102,7 +103,7 @@ gulp.task('pym', function() {
 gulp.task('serve', ['styles', 'templates'], function() {
   browserSync({
     notify: false,
-    logPrefix: 'NEWSAPPS',
+    logPrefix: 'GRAPHICBUILDER',
     open: false,
     server: {
       baseDir: ['.tmp', 'app'],
@@ -123,7 +124,7 @@ gulp.task('serve', ['styles', 'templates'], function() {
 gulp.task('serve:build', ['default'], function() {
   browserSync({
     notify: false,
-    logPrefix: 'NEWSAPPS',
+    logPrefix: 'GRAPHICBUILDER',
     open: true,
     server: ['dist']
   });

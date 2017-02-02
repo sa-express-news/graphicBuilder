@@ -8,13 +8,13 @@ export GRAPHIC_S3_BUCKET=$npm_package_config_s3_bucket
 export PROJECT_SLUG=$npm_package_config_slug
 
 echo "Syncing *.css files to S3..."
-aws s3 sync --acl public-read --profile newsapps --exclude '*.*' --include '*.css' --cache-control 'max-age=31536000' --content-encoding 'gzip' dist s3://$GRAPHIC_S3_BUCKET/graphics/$PROJECT_SLUG/
+aws s3 sync --acl public-read --profile graphicBuilder --exclude '*.*' --include '*.css' --cache-control 'max-age=31536000' --content-encoding 'gzip' dist s3://$GRAPHIC_S3_BUCKET/graphics/$PROJECT_SLUG/
 
 echo "Syncing *.js files to S3..."
-aws s3 sync --acl public-read --profile newsapps --exclude '*.*' --include '*.js' --cache-control 'max-age=31536000' --content-encoding 'gzip' dist s3://$GRAPHIC_S3_BUCKET/graphics/$PROJECT_SLUG/
+aws s3 sync --acl public-read --profile graphicBuilder --exclude '*.*' --include '*.js' --cache-control 'max-age=31536000' --content-encoding 'gzip' dist s3://$GRAPHIC_S3_BUCKET/graphics/$PROJECT_SLUG/
 
 echo "Syncing *.html files to S3..."
-aws s3 sync --acl public-read --profile newsapps --exclude '*.*' --include '*.html' --cache-control 'no-cache' --content-encoding 'gzip' dist s3://$GRAPHIC_S3_BUCKET/graphics/$PROJECT_SLUG/
+aws s3 sync --acl public-read --profile graphicBuilder --exclude '*.*' --include '*.html' --cache-control 'no-cache' --content-encoding 'gzip' dist s3://$GRAPHIC_S3_BUCKET/graphics/$PROJECT_SLUG/
 
 echo "Syncing everything else to S3..."
-aws s3 sync --profile newsapps dist s3://$GRAPHIC_S3_BUCKET/graphics/$PROJECT_SLUG/
+aws s3 sync --profile graphicBuilder --exclude '*.html' --exclude '*.js' --exclude '*.css' dist s3://$GRAPHIC_S3_BUCKET/graphics/$PROJECT_SLUG/
