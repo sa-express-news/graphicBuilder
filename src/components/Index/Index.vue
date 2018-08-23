@@ -5,13 +5,7 @@
             <p class="subtext">{{ META.prose }}</p>
 
             <div id="graphic-container">
-                <div v-for="(row, idx) in DATA" class="block-wrapper" :class="{ title: row.isTitle }" :key="`row-${idx}`">
-                    <div class="content">
-                        <div class="number">{{ commaSeparate(row.number) }}</div>
-                        <div class="desc">{{ row.desc }}</div>
-                    </div>
-                    <hr v-if="row.isTitle" class="border" />
-                </div>
+                <!-- Enter your code here! -->
             </div>
 
             <div class="footer">
@@ -27,5 +21,6 @@
         </div>
     </div>
 </template>
+
 <script src="./Index.js"></script>
 <style src="./Index.scss"></style>

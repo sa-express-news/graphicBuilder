@@ -2,9 +2,9 @@
   "name": "graphicBuilder",
   "config": {
     "s3_bucket": "graphics.expressnews.com",
-    "slug": "vue-sandbox"
+    "slug": ""
   },
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

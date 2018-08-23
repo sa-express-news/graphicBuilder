@@ -11,5 +11,8 @@ export default {
         commaSeparate: function (num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
+    },
+    mounted() {
+        // Enter your JS here!
     }
 }
