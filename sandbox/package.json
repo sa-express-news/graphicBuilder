@@ -18,7 +18,7 @@
     "deploy": "./bin/deploy.sh && npm run assets/push"
   },
   "dependencies": {
-    "express-news-styleguide": "^1.0.2",
+    "express-news-styleguide": "^1.0.4",
     "vue": "^2.5.17"
   },
   "devDependencies": {
