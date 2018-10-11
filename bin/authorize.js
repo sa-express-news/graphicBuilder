@@ -7,7 +7,7 @@ var fs = require('fs');
 var google = require('googleapis');
 var inquirer = require('inquirer');
 var nconf = require('nconf');
-var _open = require('open');
+var opn = require('opn');
 var untildify = require('untildify');
 
 var OAuth2Client = google.auth.OAuth2;
@@ -47,7 +47,7 @@ function getAuthToken(client) {
     scope: 'https://www.googleapis.com/auth/drive.readonly'
   });
 
-  _open(url);
+  opn(url);
 
   inquirer.prompt([{type: 'input', name: 'auth', message: 'Enter your code'}]).then(function (answers) {
     client.getToken(answers.auth, function(err, token) {
