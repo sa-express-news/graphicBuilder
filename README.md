@@ -50,6 +50,10 @@ aws_secret_access_key=YOUR_SECRET_ACCESS_KEY
 
 To get your unique ID and secret access key, you'll need to be added as a User in the data team AWS account. Luke Whyte can help with that.
 
+## Deploying to S3
+
+Graphics deploy to the graphics.expressnews.com buket on S3 and you'll need to declare a subdirectory name. In package.json, set the `slug` property to a directory name of your choosing.
+
 Then you can run these commands to build and deploy:
 
 ```
@@ -57,8 +61,27 @@ npm run build
 npm run deploy
 ```
 
-The package will deploy to graphics.texastribune.org/donor-wall. To change the location, update the package.json file.
+Usually, at this point, I'll navigate to my `index.html` file on S3 and checkout the graphic there to make sure all deployed as expected. Once you're happy with the production graphic, it's time to embed it in your story.
 
+## Embedding in a story
+
+Jump into the WCM and create a new freeform. GraphicBuilder uses [pym.js](http://blog.apps.npr.org/pym.js/) to load your graphic into an iFrame at the correct size for the user's device. To utilize it, copy and paste the following into your freeform:
+
+```
+<div id="example"></div>
+<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+<script>
+    var pymParent = new pym.Parent('example', 'child.html', {});
+</script>
+```
+
+The above does three things:
+ - Creates a div with the id "example"
+ - Loads pym.js
+ - Utilizes pym to load your graphics into the div
+
+Change the "example" ID to something unique that fits your graphic. Then change the first argument in pym.Parent from 'example' to your new ID. Finally, swap 'child.html' with the path to your graphic on S3. Hit save, publish, pop the freeform into your article and away we go!!!
+ 
 ## Available Commands
 
 ```sh
