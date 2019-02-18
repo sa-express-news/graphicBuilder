@@ -36,7 +36,7 @@ However, if you're building a simple chart you can get by just in the `Index/` c
  - Index.scss: You can write CSS or SASS in here for your HTML.
  - Index.js: This is the main component JS. If you simply needed to add arbitrary JavaScript, you can do it inside the `mounted` method and it will run after the component has been mounted to the DOM.
  
-If your graphic is of any degree of complexity, I suggest adding your own subcomponents and getting familiar with Vue. This [example graphic](https://github.com/sa-express-news/saen-graphicbuilder-graphics/tree/master/sheriff-shooting-mental-health) might be helpful to explore too.
+If your graphic is of any degree of complexity, I suggest adding your own subcomponents and getting familiar with Vue. This straightforward [example graphic](https://github.com/sa-express-news/saen-graphicbuilder-graphics/tree/master/farmworker-poverty-levels) or this more complext [example graphic](https://github.com/sa-express-news/saen-graphicbuilder-graphics/tree/master/sheriff-shooting-mental-health) might be helpful to explore too.
 
 ## Connect to S3
 
