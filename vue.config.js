@@ -41,5 +41,5 @@ module.exports = {
             const gzipRule = setGzipRule(config);
         }
     },
-    baseUrl: './',
+    publicPath: './',
 };

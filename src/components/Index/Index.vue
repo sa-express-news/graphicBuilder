@@ -23,4 +23,4 @@
 </template>
 
 <script src="./Index.js"></script>
-<style src="./Index.scss"></style>
+<style src="./Index.scss" lang="scss"></style>

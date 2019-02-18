@@ -6,11 +6,14 @@ const getTitle = () => data && data.META
 export default {
     name: 'graphic',
     title: getTitle,
-    data: function () { return data },
+    data() { return data },
     methods: {
-        commaSeparate: function (num) {
+        commaSeparate(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
+        },
+        stringToClass(str) {
+            return str.split(/\s+/g).join('-').toLowerCase();
+        },
     },
     mounted() {
         // Enter your JS here!
